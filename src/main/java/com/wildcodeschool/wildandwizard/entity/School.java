@@ -1,14 +1,26 @@
 package com.wildcodeschool.wildandwizard.entity;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 // TODO : update this entity
 
+//On met ici le lien pour l'entité : elle indique que l'objet doit être généré par spring data et Q les attributs doivent 
+//être convertis en colonne de la base de données.
+@Entity
 public class School {
-
+//Pour l'auto-incrémentation
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String name;
     private Long capacity;
     private String country;
 
+    //Un constructeur vide obligatoire
     public School() {
     }
 
